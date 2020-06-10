@@ -1,0 +1,107 @@
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(charset="utf-8")
+    title Registro
+    link(rel="stylesheet" href="/css/registro.css")
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+  body
+    
+    .box
+      .container
+        form(action="/register" method="POST")
+          h2 Registrarse en BuZzy
+          if(errores)
+            each error in errores
+              .alert.alert-danger.text-center=error.mensaje
+          .row100
+            .col
+              .inputBox
+                input(type="text" name="nombres" required="required" value=nombres)
+                span.text Nombre(s)
+                span.line
+            .col
+              .inputBox
+                input(type="text" name="apellidos" required="required" value=apellidos)
+                span.text Apellidos
+                span.line
+          .row100
+            .col
+              .inputBox
+                input(type="text" name="username" required="required" value=username)
+                span.text Nombre de usuario
+                span.line
+          .row100
+            .col
+              .inputBox.email
+                input#email(type="text" name="email" required="required" value=email onkeydown="validation()")
+                span.text Correo
+                span.line
+                span#text
+          .row100
+            .col
+              .inputBox
+                input#passlg(type="password" name="password" required="required" value=password)
+                span.text Contraseña
+                span.line
+                #toggle(onclick="showHide();")
+          .row100
+            .col
+              .inputBox
+                input#passrlg(type="password" name="passwordrepeat" required="required" value=passwordrepeat)
+                span.text Repetir contraseña
+                span.line
+          .row100
+            .col
+              button.botonrg Registarse
+    .error
+      span Ha ocurrido un error en el registro, intentelo de nuevo
+    .correcto
+      span Felicidades se ha registrado correctamente
+    script(src="js/jquery-3.3.1.min.js")
+    script(src="js/regjson.js")
+    //script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
+    //script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    //script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+    script(type="text/javascript").
+      function validation(){
+        var form = document.getElementById("form");
+        var email = document.getElementById("email").value;
+        var text = document.getElementById("text");
+        var pattern = /^[^ ]+@[^ ]+\\.[a-z]{2,3}$/
+        if (email.match(pattern)) {
+          form.classList.add("valid");
+          form.classList.remove("invalid");
+          text.innerHTML = "Tu correo electronico es valido.";
+          text.style.color = "#00ff00";
+        }else{
+          form.classList.remove("valid");
+          form.classList.add("invalid");
+          text.innerHTML = "Favor de ingresar un correo electronico valido.";
+          text.style.color = "#ff0000";
+        }
+        if (email == "") {
+          form.classList.remove("valid");
+          form.classList.remove("invalid");
+          text.innerHTML = "";
+          text.style.color = "#ff0000";
+        }
+      }
+    script(type="text/javascript").
+      const password = document.getElementById('passlg');
+      const passwordr = document.getElementById('passrlg');
+      const toggle = document.getElementById('toggle');
+      function showHide(){
+      if (password.type === 'password'){
+      password.setAttribute('type', 'text');
+      passwordr.setAttribute('type', 'text');
+      toggle.classList.add('hide');
+      }
+      else{
+      password.setAttribute('type', 'password');
+      passwordr.setAttribute('type', 'password');
+      toggle.classList.remove('hide');
+      }
+      }
+    

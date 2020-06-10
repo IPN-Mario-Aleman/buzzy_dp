@@ -1,0 +1,1155 @@
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(charset="utf-8")
+    link(href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet")
+    link(rel="stylesheet" href="css font/all.css")
+    link(rel="stylesheet" href="css font/all.min.css")
+    link(rel="stylesheet" href="css font/fontawesome.css")
+    link(rel="stylesheet" href="css font/fontawesome.min.css")
+    link(rel="stylesheet" href="css font/solid.css")
+    link(rel="stylesheet" href="css font/solid.min.css")
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    // slider carousel
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    title #{titulo} | #{pagina}
+  body
+    // LOGINS WITH
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '210997140082888',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+      });
+      FB.AppEvents.logPageView();
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    script(type="text/javascript").
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
+      {
+      status: 'connected',
+      authResponse: {
+      accessToken: '...',
+      expiresIn:'...',
+      signedRequest:'...',
+      userID:'...'
+      }
+      }
+    #fb-root
+    script(async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v6.0")
+    script.
+      function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      }
+      function onFailure(error) {
+      console.log(error);
+      }
+      function renderButton() {
+      gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': onSuccess,
+      'onfailure': onFailure
+      });
+      }
+    script(src="https://apis.google.com/js/platform.js?onload=renderButton" async="" defer="")
+    // CIERRE DE LOGINS WITHS
+
+    if user
+      link(rel="stylesheet", href="css/sistema/home.css")
+      header#header_nav
+        .contenedor_base(style="margin-top:0px !important;")
+          .logo_nav
+            a.logo-img(href="/")
+            .box_search
+              form(action="index.html" method="post")
+                .container-buscador
+                  input.src.linedown(type="text" name="" placeholder="Buscar... " onkeydown="search()" onkeyup="search()" autocomplete="off" value="")
+                  .i-close-btn
+                    i.fas.fa-times.close-btn
+                  input.search(type="submit" name="" value="")
+          .nav_base
+            ul.nav
+              li
+                a(href="#") Noticias
+              li
+                a(href="#") Ayuda
+              li
+                a(href="#") Convierte en BuZzer
+              li
+                a(href="/carrito") Guardados
+              li
+                a.btn-login(href="#!")
+                  .user-account
+                    img(src="img/icons/usuario.png" alt="")
+                // container
+                .full-width.Login
+                  ul
+                    li.sub-menu
+                      a.active(href="#") Cuenta
+                      ul
+                        li
+                          a(href="#") Historial
+                        li
+                          a(href="/carrito") Guardado
+                        li
+                          a(href="#") Buscar
+                        li
+                          a(href="#") Mensajes
+                        li
+                          a(href="/post-service") Publicar
+                    li.sub-menu
+                      a(href="#") Ayuda
+                      ul
+                        li
+                          a(href="#") Seguridad &amp; Servicio
+                        li
+                          a(href="#") Ayuda
+                        li
+                          a(href="#") Contactanos
+                        li
+                          a(href="#") Otros
+                  hr.divider-user
+                  p.text-center.username
+                    | #{user.username}
+                    span(aria-label="Activo(a) ahora" style="background: rgb(66, 183, 42); border-radius: 50%; display: inline-block; height: 8px; margin-left: 4px; width: 8px;")
+                  a.img-user(href="#")
+                    img(src="img/icons/usuario.png" alt="")
+                  hr.divider-user
+                  a.log-out(href="/logout") Cerrar Sesi&oacute;n
+                // fin container
+          i.fa.fa-bars.visible-xs.btn-menuMobile.ShowMenuMobile(aria-hidden="true")
+        nav#contenedor_nav
+          .navegacion
+            ul
+              li
+                a(href="/categorias/Diseño%20Grafico")
+                  | Dise&ntilde;o Grafico
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Photoshop")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Photoshop
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño de Presentaciones")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de Presentaciones
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Infografia")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Infografia
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Trazado de vectores")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Trazado de vectores
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño Twitch")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño Twitch
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño de juegos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de juegos
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Youtube Design")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Youtube Design
+              li  
+                a(href="/categorias/Asistente Virtual")
+                  | Asistente Virtual
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Administracion y Soporte")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Administracion y Soporte
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Busqueda")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Busqueda
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Conversion de Archivos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Conversion de Archivos
+              li
+                a(href="/categorias/Coach")
+                  | Coach
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Salud y Bienestar")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Salud y Bienestar
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Empresarial")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Empresarial
+              li
+                a(href="/categorias/Gaming")
+                  | Gaming
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Diseño de Juegos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de Juegos
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Graficos para Streamers")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Graficos para Streamers
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Tienda de Twitch")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Tienda de Twitch
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Empresarial")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Empresarial
+              li
+                a(href="/categorias/Marketing Digital")
+                  | Marketing Digital
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Redes Sociales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Redes Sociales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Analisis Web")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Analisis Web
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Promocion de Música")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Promocion de Música
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/E-Commerce")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat E-Commerce
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Influencer")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Influencer
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Publicidad")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Publicidad
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Relaciones Publicas")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Relaciones Publicas
+              li
+                a(href="/categorias/Traduccion")
+                  | Traduccion
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Traduccion/Libros y Textos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Libros y Textos 
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Traduccion/Oratoria Social y Profesional")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Oratoria Social y Profesional
+              li
+                a(href="/categorias/Video y Animación")
+                  | Video y Animación
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Animacion")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Animación
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Efectos Visuales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Efectos Visuales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Trailers")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Trailers
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/GIFs")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat GIFs
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Videos musicales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Videos musicales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Subtitulos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Subtitulos
+              li
+                a(href="/categorias/Musica y Audio")
+                  | Musica y Audio
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Cantantes y Vocalistas")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Cantantes y Vocalistas
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Sessiones Musicales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Sessiones Musicales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Efectos de Sonido")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Efectos de Sonido
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Mixing y Masterizacion")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Mixing y Masterizacion
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Escritores de Canciones")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Escritores de Canciones
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Productores y Compositore")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Productores y Compositore
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Transcripcion de Música")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Transcripcion de Música
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/DJs")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat DJs
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Lecciones de Musica")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Lecciones de Musica
+              li
+                a(href="/categorias/Otros")
+                  | Otros
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                      ul
+                        li
+                          a(href="/categorias/Otros/Consultoria de Finanzas")
+                            img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                            div.scat Consultoria de Finanzas
+
+    else
+      link(rel="stylesheet" href="css/index.css")
+      header#header_nav
+        .contenedor_base
+          .logo_nav
+            a.logo-img(href="/")
+          .nav_base
+            ul.nav
+              li
+                a(href="#") Noticias
+              li
+                a(href="#") Ayuda
+              li
+                a(href="#") Convierte en BuZzer
+              li
+                a(href="/register") Resgistrarse
+              li
+                a#login_modal(href="/login" /*data-toggle="modal" data-target="#login"*/) Inciar Sesión
+        nav#contenedor_nav
+          .navegacion
+            ul
+              li
+                a(href="/categorias/Diseño%20Grafico")
+                  | Dise&ntilde;o Grafico
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Photoshop")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Photoshop
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño de Presentaciones")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de Presentaciones
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Infografia")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Infografia
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Trazado de vectores")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Trazado de vectores
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño Twitch")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño Twitch
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Diseño de juegos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de juegos
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Diseño%20Grafico/Youtube Design")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Youtube Design
+              li  
+                a(href="/categorias/Asistente Virtual")
+                  | Asistente Virtual
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Administracion y Soporte")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Administracion y Soporte
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Busqueda")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Busqueda
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Asistente Virtual/Conversion de Archivos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Conversion de Archivos
+              li
+                a(href="/categorias/Coach")
+                  | Coach
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Salud y Bienestar")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Salud y Bienestar
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Empresarial")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Empresarial
+              li
+                a(href="/categorias/Gaming")
+                  | Gaming
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Diseño de Juegos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Diseño de Juegos
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Graficos para Streamers")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Graficos para Streamers
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Gaming/Tienda de Twitch")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Tienda de Twitch
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Coach/Empresarial")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Empresarial
+              li
+                a(href="/categorias/Marketing Digital")
+                  | Marketing Digital
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Redes Sociales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Redes Sociales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Analisis Web")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Analisis Web
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Promocion de Música")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Promocion de Música
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/E-Commerce")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat E-Commerce
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Influencer")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Influencer
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Publicidad")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Publicidad
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Marketing Digital/Relaciones Publicas")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Relaciones Publicas
+              li
+                a(href="/categorias/Traduccion")
+                  | Traduccion
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Traduccion/Libros y Textos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Libros y Textos 
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Traduccion/Oratoria Social y Profesional")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Oratoria Social y Profesional
+              li
+                a(href="/categorias/Video y Animación")
+                  | Video y Animación
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Animacion")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Animación
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Efectos Visuales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Efectos Visuales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Trailers")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Trailers
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/GIFs")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat GIFs
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Videos musicales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Videos musicales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Video y Animación/Subtitulos")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Subtitulos
+              li
+                a(href="/categorias/Musica y Audio")
+                  | Musica y Audio
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Cantantes y Vocalistas")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Cantantes y Vocalistas
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Sessiones Musicales")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Sessiones Musicales
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Efectos de Sonido")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Efectos de Sonido
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Mixing y Masterizacion")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Mixing y Masterizacion
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Escritores de Canciones")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Escritores de Canciones
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Productores y Compositore")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Productores y Compositore
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Transcripcion de Música")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Transcripcion de Música
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/DJs")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat DJs
+                  .submenu-items
+                    ul
+                      li
+                        a(href="/categorias/Musica y Audio/Lecciones de Musica")
+                          img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                          div.scat Lecciones de Musica
+              li
+                a(href="/categorias/Otros")
+                  | Otros
+                  i.fas.fa-caret-up
+                .submenu
+                  .submenu-items
+                      ul
+                        li
+                          a(href="/categorias/Otros/Consultoria de Finanzas")
+                            img(src="/img/cat_scat/photoshop.png" alt="photoshop")
+                            div.scat Consultoria de Finanzas
+      section#banner
+        .contenedor
+      
+
+      script(type="text/javascript").
+        window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0)
+        })
+      script(type="text/javascript").
+        window.addEventListener("scroll", function(){
+        var nav = document.querySelector("nav");
+        nav.classList.toggle("sticky", window.scrollY > 500)
+        })
+      script(src="jquery.js")
+      // Que es buzzy
+      .page-wrapper
+        .post-slider
+          h1.slider-title Algunos de nuestros Servicios
+          i.fas.fa-chevron-left.prev
+          i.fas.fa-chevron-right.next
+          .post-wrapper
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Diseño Grafico
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+            .post
+              img.slider-image(src="img/images/gaming.jpg" alt="")
+              .post-info
+                h4
+                  a(href="#") Gaming
+                i.far.fa-user  Mario
+                i.far.fa-calendar  Mar 8, 2020
+      .contenedor2.dos-columnas
+        .logo-entrada
+          img#video_modal(src="img/images/video.png" alt="" data-toggle="modal" data-target="#play-video-1")
+          img#video_modal.play_btn(src="img/icons/play.png" alt="" data-toggle="modal" data-target="#play-video-1")
+        .main2
+          h1
+            | Con Bu
+            span Zzy
+            |  trabajar nunca habia sido tan sencillo. Trabaja desde la comodidad de tu casa, rapido y seguro.
+          .application
+            .tittle
+              i.far.fa-check-circle
+              h2 Servicios Seguros
+            p.app
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+          .application
+            .tittle
+              i.far.fa-check-circle
+              h2 Pagos Seguros
+            p.app
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          .application
+            .tittle
+              i.far.fa-check-circle
+              h2 Servicio de calidad
+            p.app
+              | Encuentra cualquier tipo de servicio con la mayor calidad y desde tu casa, 100% evaluados
+      // Modal
+      #play-video-1.modal.fade
+        .modal-dialog.modal-dialog-centered(role="document")
+          .modal-content
+            .modal-body
+              video#video(width="" controls="" loop="")
+                source(src="video/digital compaing.mp4" type="video/mp4")
+      script(type="text/javascript").
+        $('body').on('hidden.bs.modal', '.modal', function () {
+        $('video').trigger('pause');
+        });
+        document.getElementById("video").addEventListener("click", function(){
+        document.getElementById("video").style.autoplay;
+        })
+      #login.modal.fade
+        .modal-dialog.modal-dialog-centered(role="document")
+          .modal-content
+            .modal-body
+              .main
+                form#formlg(action="")
+                  h1 Inicia sesión en Buzzy
+                  .fb-login-button(data-width="274" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false")
+                  .g-signin2(data-width="274" data-height="45" data-button-type="continue_with")
+                  .divider.line.one-line.contenteditable
+                    span Or
+                  .input-contenedor
+                    i.fas.fa-envelope.icon
+                    input(type="text" name="usuariolg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Correo / Nombre de Usuario" required="")
+                  .input-contenedor
+                    i.fas.fa-key.icon
+                    input(type="password" name="passlg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Contraseña" required="")
+                  input.botonlg(type="submit" value="Iniciar Sesión")
+                  p Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.
+                .error
+                  span Datos de Ingreso no válidos, inténtelo de nuevo
+      
+      .container_nos
+        .icon_sec_nos
+          .iconBx.active(data-id="content1")
+            img(src="img/images/gaming.jpg" alt="")
+          .iconBx(data-id="content2")
+            img(src="img/images/gaming.jpg" alt="")
+          .iconBx(data-id="content3")
+            img(src="img/images/gaming.jpg" alt="")
+          .iconBx(data-id="content4")
+            img(src="img/images/gaming.jpg" alt="")
+        .content_sec_nos
+          #content1.contentBx.active
+            div
+              .text_nos
+                h2 Nosotros
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          #content2.contentBx
+            div
+              .text_nos
+                h2 Buzzer
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          #content3.contentBx
+            div
+              .text_nos
+                h2 Comienza a buscar
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          #content4.contentBx
+            div
+              .text_nos
+                h2 Contactanos
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      script(type="text/javascript").
+        var iconBx = document.querySelectorAll('.iconBx');
+        var contentBx = document.querySelectorAll('.contentBx');
+        for (var i=0; i<iconBx.length; i++){
+        iconBx[i].addEventListener('mouseover', function(){
+        for (var i = 0; i <  contentBx.length; i++) {
+        contentBx[i].className="contentBx";
+        }
+        document.getElementById(this.dataset.id).className = 'contentBx active';
+        for (var i = 0; i < iconBx.length; i++) {
+        iconBx[i].className='iconBx';
+        }
+        this.className = 'iconBx active';
+        })
+        }
+      // TESTIMONIALES
+      h1.title_section_pub Testimoniales
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      section.publicaciones
+        .testimonial
+          .card
+            .layer
+            .content
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto ea tenetur quas facere minima obcaecati mollitia sed ipsum quod, eius repellat nihil quos. Saepe ipsa veritatis magni voluptates voluptatum.
+              .image
+                img(width="100px" src="" alt="")
+              .details
+                h2
+                  | Someone famous 
+                  br
+                  span Frontend developer
+        .testimonial
+          .card
+            .layer
+            .content
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto ea tenetur quas facere minima obcaecati mollitia sed ipsum quod, eius repellat nihil quos. Saepe ipsa veritatis magni voluptates voluptatum.
+              .image
+                img(width="100px" src="1.jpg" alt="")
+              .details
+                h2
+                  | Someone famous 
+                  br
+                  span Backend developer
+        .testimonial
+          .card
+            .layer
+            .content
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto ea tenetur quas facere minima obcaecati mollitia sed ipsum quod, eius repellat nihil quos. Saepe ipsa veritatis magni voluptates voluptatum.
+              .image
+                img(width="100px" src="1.jpg" alt="")
+              .details
+                h2
+                  | Someone famous 
+                  br
+                  span Backend developer
+      // Cierre seccion de publicaciones recomendados!
+      // newsletter
+      .newsletter.parallax
+        .contenido.contenedor
+          h3
+            | Unete a Bu
+            span Zzy
+          p Tenemos los servicios de lo que tu o tu empresa necesita.
+          a(href="/login") Comienza Ahora
+        // .contenido
+      // .newsletter
+      // cierre newsletter
+    // FOOTER
+    footer
+      .redes_sociales
+        ul
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-facebook-f
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-twitter
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-google-plus-g
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-instagram
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-discord
+      .container.wrapp
+        .column1
+          .footer-widget.about-widget
+            h2.widget-tittle BuZzy
+            p#descrip
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            #cards
+              i.fab.fa-cc-paypal
+              i.fab.fa-cc-amex
+              i.fab.fa-cc-visa
+              i.fab.fa-cc-mastercard
+              i.fab.fa-cc-amazon-pay
+            p.secure
+              span
+                i.fas.fa-lock
+              | Pagos Online Seguros
+        .column2
+          .footer-widget
+            h2.widget-tittle Acerca de
+            ul#ours
+              li
+                a(href="#") Nosotros
+              li
+                a(href="#") Misión
+              li
+                a(href="#") Visión
+              li
+                a(href="#") Innovación
+              li
+                a(href="#") Términos y condiciones
+              li
+                a(href="#") Politica de privacidad
+        .column3
+          .footer-widget
+            h2.widget-tittle Support
+            ul#helps
+              li
+                a(href="#") Help & Support
+              li
+                a(href="#") Selling on BuZzy
+              li
+                a(href="#") Buying on BuZzy
+        .column4
+          .footer-widget
+            h2.widget-tittle Contactanos
+            #container_contact
+            .contact_addres
+              i.fas.fa-map-marker-alt
+              | Direccion : xxx, yyy yyyy, zzzz, CP : 07512
+            .contact_number
+              i.fas.fa-mobile-alt
+              |  Celular : +52 55-6611-2832
+            .contact_email
+              i.far.fa-envelope
+              |  Correo : contact@gmail.com
+      .copyright
+        .container
+          p.copy
+            | © Copyright 
+            script(type="text/javascript").
+              document.write(new Date().getFullYear());
+            |  Todos los derechos reservados
+    script(type="text/javascript").
+      $(document).ready(function(){
+      $('.menu-toggle').click(function(){
+      $('nav').toggleClass('active')
+      })
+      $('ul li').click(function(){
+      $(this).siblings().removeClass('active');
+      $(this).toggleClass('active');
+      })
+      })
+    script(type="text/javascript").
+      window.addEventListener("scroll",function(){
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+      })
+    script(src="js/jquery-3.3.1.min.js")
+   
+    script(src="https://vjs.zencdn.net/7.6.6/video.js")
+    script(src="js/main1.js")
+    script(src="js/jquery-3.1.0.min.js")
+    script(src="js/bootstrap.min.js")
+    script(src="js/main.js")
+    script(type="text/javascript").
+      $(document).ready(function(){
+      $('input').click(function(){
+      $(this).addClass('active');
+      $('.close-btn').addClass('active');
+      })
+      $('.close-btn').click(function(){
+      $('.src').removeClass('active');
+      $('.close-btn').removeClass('active');
+      $('.search').removeClass('active');
+      })
+      })
+    script(type="text/javascript").
+      function search(){
+      var val = $(".src").val().length;
+      if(val > 0){
+      $('.search').addClass('active');
+      }else{
+      $('.search').removeClass('active');
+      }
+      }
+    script(type="text/javascript" src="/js/slick.js")
+    script(type="text/javascript" src="/js/scripts.js")

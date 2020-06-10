@@ -1,0 +1,311 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: #E6E6E6;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    background-image: url(../img/images/imagen1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: 100vh;
+}
+
+.main{
+    width: 70%;
+    background-color: rgba(255,255,255,1);
+    text-align: center;
+	  border-radius: 5px;
+	  margin: 0 auto 0 auto;
+	  padding: 3%;
+    position: relative;
+    height: 500px;
+}
+
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .dos-columnas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.logo-entrada{
+  width: 100%;
+  position: relative;
+  height: 500px;
+}
+.logo-entrada h2{
+  color: #fff;
+  font-size: 3em;
+  top: 0;
+  left: 0;
+  margin: 60px 0px;
+}
+.logo-entrada p{
+    color: #1dab34;
+    font-size: 1.5em;
+}
+.logo-entrada p span.a{
+  color: #fff;
+}
+.logo-entrada p span.b{
+  color: #2fc0f6;
+}
+.logo-entrada p span.c{
+    color: #fff;
+}
+
+.g-signin2{
+  margin-top: 10px;
+}
+
+header.site-header{
+  background-color: #282828;
+  height: 85px;
+  width: auto;
+}
+
+div.contenedor1 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+div.logo img{
+  height: 65px;
+  width: 130px;
+  float: left;
+  margin-top: 5px;
+}
+
+
+.Buscador {
+  background-size: 24px;
+  width: 300px;
+  border: transparent;
+  border-bottom: solid 1px #ccc;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+}
+
+nav.navegacion-perfil {
+  display: none;
+  max-width: 700px;
+  margin-top: 15px;
+}
+nav.navegacion-perfil a{
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .6s ease;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav.navegacion-perfil a:hover{
+  background-color: #fe4918;
+}
+
+nav.navegacion-perfil a:last-child {
+  border: 2px solid #fe4918;
+  color: #fe4918;
+}
+
+nav.navegacion-perfil a:last-child:hover {
+  color: #ffffff;
+}
+
+nav.navegacion-perfil a{
+  padding: 10px 10px;
+  display: inline-block;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px 0 0;
+}
+@media only screen and (min-width: 768px){
+  nav.navegacion-perfil{
+    width: 50%;
+    float: right;
+    text-align: right;
+    display: block;
+}
+
+/******************************
+==    Diseño formulario      ==
+******************************/
+.divider {
+  display: flex;
+}
+.divider span{
+  color: #b5b5b5;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+}
+.line {
+  align-items: center;
+  margin: 1em -1em;
+}
+.line::before,
+.line::after {
+    height: 1px;
+    margin: 0 1em;
+}
+.one-line::before,
+.one-line::after {
+      background: #b5b5b5;
+}
+.main h2{
+  font-size: 1.7em;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.main .input-contenedor{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.main .input-contenedor input[type=text], .main .input-contenedor input[type=password]{
+  position: inherit;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-size: 16px;
+  color: #000;
+  width: 100%;
+  height: 30px;
+}
+.main .input-contenedor label{
+  position: absolute;
+  top: 9px;
+  left: 0;
+  font-weight: bold;
+  pointer-events: none;
+  display: block;
+  transition: 0.5s;
+}
+.main form .input-contenedor input[type=text]:focus + label, .main .input-contenedor input[type=password]:focus + label,
+.main form .input-contenedor input[type=text]:valid + label, .main .input-contenedor input[type=password]:valid + label{
+  transform: translateY(-28px);
+  font-weight: bold;
+}
+
+.main .input-contenedor span{
+    position: absolute;
+    bottom: 18px;
+    right: 0;
+    display: block;
+    background: #555;
+    width: 100%;
+    height: 2px;
+}
+.main .input-contenedor span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00b0ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+.main .input-contenedor input[type=text]:focus ~ span::before, .main .input-contenedor input[type=password]:focus ~ span::before,
+.main .input-contenedor input[type=text]:valid ~ span::before, .main .input-contenedor input[type=password]:valid ~ span::before{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.botonlg{
+  margin-top: 15px;
+  border: none;
+  box-shadow: none;
+  padding: 10px 25px;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.botonlg:hover{
+  background: #00bcd4;
+}
+.error{
+    background-color: #E74F4F;
+    position: absolute;
+    top: 0;
+    padding: 10px 0 ;
+    border-radius:  0 0 5px 5px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.main .input-contenedor input::placeholder{
+  color: #ccc;
+}
+#toggle{
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url(/img/icons/ojo.png);
+  background-size: cover;
+  cursor: pointer;
+}
+#toggle.hide{
+  background: url(/img/icons/esconder.png);
+  background-size: cover;
+}

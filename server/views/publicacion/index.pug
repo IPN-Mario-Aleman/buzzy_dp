@@ -1,0 +1,299 @@
+extends ../layouts/publicacion
+block contenido
+    main
+      .box1
+        .overview-serv
+          nav.cat-subcat
+            a(href="#") #{userServ[0].nom_cat}
+            i.fas.fa-angle-right
+            a(href="#") #{userServ[0].nom_scat}
+          h1 #{userServ[0].titulo}
+          .overview-profile
+            label.profile-pict(for="profile_image" style="width: 32px; height: 32px; font-size: 1em;")
+              img.profile-pict-img(src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/09d8675003fca5e81a1fed2f17bca9b3-753320121554244223.7884731/F080FA4A-EF3D-4EBE-A1D6-BD0BB9F28C40" alt="studioawest")
+            span.profile-user
+              a(href="#") #{userServ[0].username}
+        .container
+          .wrapper
+            ul#sb-slider.sb-slider
+              li
+                a(href="#" target="_blank")
+                  img(src=`/img/pub/${userServ[0].img_1}` alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img2.jpg" alt="image2")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img3.jpg" alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img4.jpg" alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img5.jpg" alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img6.jpg" alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+              li
+                a(href="#" target="_blank")
+                  img(src="/img/images/img7.jpg" alt="image1")
+                .sb-description
+                  h3 Titulo imagen
+            #nav-arrows.nav-arrows
+              a(href="#") Next
+              a(href="#") Previous
+        .coments-pub
+          h2 Comentarios
+          .page-wrapper
+            .post-slider
+              i.fas.fa-chevron-left.prev
+              i.fas.fa-chevron-right.next
+              .post-wrapper
+                .post
+                  .post-info
+                    .overview-profile(style="margin-top: -5px; margin-left: 20px;")
+                      label.profile-pict(for="profile_image")
+                        img.profile-pict-img(src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/09d8675003fca5e81a1fed2f17bca9b3-753320121554244223.7884731/F080FA4A-EF3D-4EBE-A1D6-BD0BB9F28C40" alt="studioawest")
+                      span.profile-user
+                        a(href="#") TuPapitoMix
+                      .comments-user
+                        p
+                          | Comentario Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                .post
+                  .post-info
+                    .overview-profile(style="margin-top: -5px; margin-left: 20px;")
+                      label.profile-pict(for="profile_image")
+                        img.profile-pict-img(src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/09d8675003fca5e81a1fed2f17bca9b3-753320121554244223.7884731/F080FA4A-EF3D-4EBE-A1D6-BD0BB9F28C40" alt="studioawest")
+                      span.profile-user
+                        a(href="#") ElCristiano
+                      .comments-user
+                        p
+                          | Comentario Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                .post
+                  .post-info
+                    .overview-profile(style="margin-top: -5px; margin-left: 20px;")
+                      label.profile-pict(for="profile_image")
+                        img.profile-pict-img(src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/09d8675003fca5e81a1fed2f17bca9b3-753320121554244223.7884731/F080FA4A-EF3D-4EBE-A1D6-BD0BB9F28C40" alt="studioawest")
+                      span.profile-user
+                        a(href="#") GGOP
+                      .comments-user
+                        p
+                          | Comentario Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .about-pub
+          h1 Descripcion
+          p
+            | #{userServ[0].descripcion}
+        .faqs
+          h1 FAQS
+          #question1.accordion-item
+            a.accordion-link(href="#question1")
+              | In what accents do you provide the voice over?
+              i.fas.fa-plus
+              i.fas.fa-minus
+            .answer
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          #question2.accordion-item
+            a.accordion-link(href="#question2")
+              | Can you write the script of the video?
+              i.fas.fa-plus
+              i.fas.fa-minus
+            .answer
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          #question3.accordion-item
+            a.accordion-link(href="#question3")
+              | What is your revision policy?
+              i.fas.fa-plus
+              i.fas.fa-minus
+            .answer
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          #question4.accordion-item
+            a.accordion-link(href="#question4")
+              | Can you create a 2D animation which is more than 180 seconds.?
+              i.fas.fa-plus
+              i.fas.fa-minus
+            .answer
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      .box2
+        .wrap
+          ul.tabs
+            li
+              a(href="#tab1")
+                span.fas.fa-dollar-sign.bronce
+                span.tab-text Basico
+            li
+              a(href="#tab2")
+                span.fas.fa-dollar-sign.silver
+                span.tab-text Standard
+            li
+              a(href="#tab3")
+                span.fas.fa-dollar-sign.gold
+                span.tab-text Premium
+          .secciones
+            article#tab1
+              .title-start
+                h1 Paquete Basico
+                p $ #{userServ[0].costo}
+              .desc-package
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .delivary-package
+                li
+                  i.far.fa-clock
+                  span.delivary-text Tiempo en liberaci&oacute;n &nbsp; &nbsp;
+                li
+                  i.fas.fa-sync
+                  span.delivary-text Revisi&oacute;n
+              .works-sign
+                li
+                  i.fas.fa-check.active-prom
+                  span 4 paquetes
+                li
+                  i.fas.fa-check.active-prom
+                  span Page/Channel Evaluation
+                li
+                  i.fas.fa-check
+                  span Action Plan
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 500 Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 3 Focus Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Topic Research
+                li
+                  i.fas.fa-check
+                  span References &amp; Citations
+              .footer-pub
+                form(action=`/checkout/customize/${userServ[0].id}` method="get")
+                  //script.stripe-button(src="https://checkout.stripe.com/checkout.js" data-key="pk_test_R8K3WJDbLa26WzJnzcoOfBMW00eK7plOEP" data-amount=`${userServ[0].costo}` data-name="Demo site" data-description="Widget" data-image="/img/Logo/logo.jpg" data-locale="auto")
+                  //script(type="text/javascript").
+                    document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                  button(type="submit"  name="button")
+                    i.fas.fa-shopping-cart
+                    | Comprar ($ #{userServ[0].costo})
+            article#tab2
+              .title-start
+                h1 Paquete Intermedio
+                p $ 160
+              .desc-package
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .delivary-package
+                li
+                  i.far.fa-clock
+                  span.delivary-text Tiempo en liberaci&oacute;n &nbsp; &nbsp;
+                li
+                  i.fas.fa-sync
+                  span.delivary-text Revisi&oacute;n
+              .works-sign
+                li
+                  i.fas.fa-check.active-prom
+                  span 4 paquetes
+                li
+                  i.fas.fa-check.active-prom
+                  span Page/Channel Evaluation
+                li
+                  i.fas.fa-check
+                  span Action Plan
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 500 Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 3 Focus Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Topic Research
+                li
+                  i.fas.fa-check
+                  span References &amp; Citations
+              .footer-pub
+                form(action="/Checkout" method="post")
+                  script.stripe-button(src="https://checkout.stripe.com/checkout.js" data-key="pk_test_R8K3WJDbLa26WzJnzcoOfBMW00eK7plOEP" data-amount="16000" data-name="Demo site" data-description="Widget" data-image="/img/Logo/logo.jpg" data-locale="auto")
+                  script(type="text/javascript").
+                    document.getElementsByClassName('stripe-button-el')[0,1].style.display='none';
+                  button(type="submit" name="button")
+                    i.fas.fa-shopping-cart
+                    | Comprar ($ 160)
+            article#tab3
+              .title-start
+                h1 Paquete Pro
+                p $ 250
+              .desc-package
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .delivary-package
+                li
+                  i.far.fa-clock
+                  span.delivary-text Tiempo en liberaci&oacute;n &nbsp; &nbsp;
+                li
+                  i.fas.fa-sync
+                  span.delivary-text Revisi&oacute;n
+              .works-sign
+                li
+                  i.fas.fa-check.active-prom
+                  span 4 paquetes
+                li
+                  i.fas.fa-check.active-prom
+                  span Page/Channel Evaluation
+                li
+                  i.fas.fa-check
+                  span Action Plan
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 500 Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Up to 3 Focus Words
+                li
+                  i.fas.fa-check.active-prom
+                  span Topic Research
+                li
+                  i.fas.fa-check
+                  span References &amp; Citations
+              .footer-pub
+                form(action="/Checkout" method="post")
+                  script.stripe-button(src="https://checkout.stripe.com/checkout.js" data-key="pk_test_R8K3WJDbLa26WzJnzcoOfBMW00eK7plOEP" data-amount="25000" data-name="Demo site" data-description="Widget" data-image="/img/Logo/logo.jpg" data-locale="auto")
+                  script(type="text/javascript").
+                    document.getElementsByClassName('stripe-button-el')[0,1,2].style.display='none';
+                  button(type="submit" name="button")
+                    i.fas.fa-shopping-cart
+                    | Comprar ($ 250)
+
+    script(type="text/javascript").
+      $('ul.tabs li a:first').addClass('active');
+      $('.secciones article').hide();
+      $('.secciones article:first').show();
+      $('ul.tabs li a').click(function(){
+      $('ul.tabs li a').removeClass('active');
+      $(this).addClass('active');
+      $('.secciones article').hide();
+      var activeTab = $(this).attr('href');
+      $(activeTab).show();
+      return false;
+      });
+    script(type="text/javascript").
+      $(document).ready(function(){
+      $('.accordion-item').click(function(){
+      $(this).siblings().removeClass('active');
+      $(this).toggleClass('active');
+      })
+      })

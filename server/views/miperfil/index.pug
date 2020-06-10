@@ -1,0 +1,172 @@
+extends ../layouts/index
+block contenido
+    .container
+      .row
+        .col-5
+          .card
+            .card-body
+              a.navbar-brand(href="#")
+                img.card-style(width="200px" height="200px" src="/img/icons/img_avatar.png" alt="user")
+              h5.card-title #{user.username}
+              h6.card-subtitle.mb-2.text-muted(style="margin-top: 20px;text-align: center;")
+                p#nom-per #{user.descripcion}
+                a(href="#0")
+                  img#img-des(src="/img/icons/edit.jpg" width="20" height="20" alt="loc")
+                #desc-form.un-hi
+                  .col-12
+                    input#description.form-control(type="text" placeholder="What's new in your life?")
+                    .row(style="margin-top: 10px;")
+                      .col-6
+                        button#btn-cancel-desc.btn.btn-light.btn-block(type="button") Cancel
+                      .col-6
+                        button#btn-update-desc.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              p.hint-p What&apos;s your story in one line?
+          #card2.card
+            .card-body
+              #row-card.row
+                .col-6
+                  a(data-toggle="tooltip" title="Here you can write your address")
+                    h6.card-subtitle E-Mail
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#email-chg(href="#0")
+                      | Add New
+              p#email-value #{user.email}
+              #email-form.un-hi
+                .col-12
+                  input#email-input.form-control(type="text" placeholder="What's your new E-Mail?")
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-email.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-email.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle Posts
+                  p.par-edit
+              p Active Posts
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle Telephone
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#tel-chg(href="#0")
+                      | Add New
+              each tel in telefonos
+                p#tel-value #{tel.telefono}
+              #tel-form.un-hi
+                .col-12
+                  input#tel-input.form-control(type="text" placeholder="What's your new Telephone?")
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-tel.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-tel.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle Social Media
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#sm-chg(href="#0")
+                      | Add New
+              #social-plaholder
+                #sm-value-w
+                #sm-value-f
+              #sm-form.un-hi
+                .col-12
+                  .row(style="margin-top: 10px;")
+                    .col-8
+                      input#sm-input.form-control(type="text" placeholder="Add a new link or number")
+                    .col-4
+                      .form-group
+                        select#selector.form-control
+                          option Facebook
+                          option WhatsApp
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-sm.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-sm.btn.btn-success.btn-block(type="button") Update
+        .col-7
+          .card
+            .card-header
+              h5 Technical Information
+              p(style="font-size: 13px;")
+                | Tell us about your studies or certifications
+              p
+            .card-body
+              #row-card.row
+                .col-6
+                  a(data-toggle="tooltip" title="Here you can write your address")
+                    h6.card-subtitle College Degree
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#college-chg(href="#0")
+                      | Add New
+              p#college-value
+              #college-form.un-hi
+                .col-12
+                  input#college-input.form-control(type="text" placeholder="What's your new College Degree?")
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-college.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-college.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle Study Time
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#study-chg(href="#0")
+                      | Add New
+              p#study-value
+              #study-form.un-hi
+                .col-12
+                  input#study-input.form-control(type="text" placeholder="What's your new Study Time?")
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-study.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-study.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle School or Institution
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#school-chg(href="#0")
+                      | Add New
+              p#school-value
+              #school-form.un-hi
+                .col-12
+                  input#school-input.form-control(type="text" placeholder="What's your new Study Time?")
+                  .row(style="margin-top: 10px;")
+                    .col-6
+                      button#btn-cancel-school.btn.btn-light.btn-block(type="button") Cancel
+                    .col-6
+                      button#btn-update-school.btn.btn-success.btn-block(type="button") Update
+              hr.my-4
+              #row-card.row
+                .col-6
+                  h6.card-subtitle Certification/Title Img
+                  p.par-edit
+                .col-6
+                  h6.card-subtitle.text-right
+                    a#img-form(href="#0")
+                      | Add New
+              p#img-cer
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js")
+    script(src="/js/app.js")

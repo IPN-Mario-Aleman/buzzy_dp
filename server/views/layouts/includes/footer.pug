@@ -1,0 +1,202 @@
+script(src="jquery.js")
+if user
+else
+  #login.modal.fade
+        .modal-dialog.modal-dialog-centered(role="document")
+          .modal-content
+            .modal-body
+              .main
+                form#formlg(action="")
+                  h1 Inicia sesión en Buzzy
+                  .fb-login-button(data-width="274" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false")
+                  .g-signin2(data-width="274" data-height="45" data-button-type="continue_with")
+                  .divider.line.one-line.contenteditable
+                    span Or
+                  .input-contenedor
+                    i.fas.fa-envelope.icon
+                    input(type="text" name="usuariolg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Correo / Nombre de Usuario" required="")
+                  .input-contenedor
+                    i.fas.fa-key.icon
+                    input(type="password" name="passlg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Contraseña" required="")
+                  input.botonlg(type="submit" value="Iniciar Sesión")
+                  p Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.
+                .error
+                  span Datos de Ingreso no válidos, inténtelo de nuevo
+
+footer
+      .redes_sociales
+        ul
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-facebook-f
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-twitter
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-google-plus-g
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-instagram
+          li
+            a(href="#")
+              span
+              span
+              span
+              span
+              i.fab.fa-discord
+      .container.wrapp
+        .column1
+          .footer-widget.about-widget
+            h2.widget-tittle BuZzy
+            p#descrip
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            #cards
+              i.fab.fa-cc-paypal
+              i.fab.fa-cc-amex
+              i.fab.fa-cc-visa
+              i.fab.fa-cc-mastercard
+              i.fab.fa-cc-amazon-pay
+            p.secure
+              span
+                i.fas.fa-lock
+              | Pagos Online Seguros
+        .column2
+          .footer-widget
+            h2.widget-tittle Acerca de
+            ul#ours
+              li
+                a(href="#") Nosotros
+              li
+                a(href="#") Misión
+              li
+                a(href="#") Visión
+              li
+                a(href="#") Innovación
+              li
+                a(href="#") Términos y condiciones
+              li
+                a(href="#") Politica de privacidad
+        .column3
+          .footer-widget
+            h2.widget-tittle Support
+            ul#helps
+              li
+                a(href="#") Help & Support
+              li
+                a(href="#") Selling on BuZzy
+              li
+                a(href="#") Buying on BuZzy
+        .column4
+          .footer-widget
+            h2.widget-tittle Contactanos
+            #container_contact
+            .contact_addres
+              i.fas.fa-map-marker-alt
+              | Direccion : xxx, yyy yyyy, zzzz, CP : 07512
+            .contact_number
+              i.fas.fa-mobile-alt
+              |  Celular : +52 55-6611-2832
+            .contact_email
+              i.far.fa-envelope
+              |  Correo : contact@gmail.com
+      .copyright
+        .container
+          p.copy
+            | © Copyright 
+            script(type="text/javascript").
+              document.write(new Date().getFullYear());
+            |  Todos los derechos reservados
+script(src="/js/jquery-3.3.1.min.js")
+
+script(type="text/javascript").
+  if(window.location.pathname === "/"){
+    var scripts1 = document.createElement('script');
+    scripts1.src = '/js/slick.js';
+    document.write(scripts1.outerHTML);
+    var scripts2 = document.createElement('script');
+    scripts2.src = 'js/scripts.js';
+    document.write(scripts2.outerHTML);
+  }
+
+script(src="https://vjs.zencdn.net/7.6.6/video.js")
+script(src="/js/main1.js")
+script(src="/js/jquery-3.1.0.min.js")
+script(src="/js/bootstrap.min.js")
+script(src="/js/main.js")
+
+script(type="text/javascript").
+  if(window.location.pathname === "/carrito"){
+    var script = document.createElement('script');
+    script.src = '/js/localstorage.js';
+    document.write(script.outerHTML);
+  }
+  
+script(src="/js/jquery.js")
+script(src="/js/jquery.slicebox.js")
+script(type="text/javascript" src="/js/slick.js")
+script(type="text/javascript" src="/js/scripts-pub.js")
+script(src="/js/script.js")
+
+script(type="text/javascript").
+  $(document).ready(function(){
+  $('.src').click(function(){
+  $(this).addClass('active');
+  $('.close-btn').addClass('active');
+  })
+  $('.close-btn').click(function(){
+  $('.src').removeClass('active');
+  $('.close-btn').removeClass('active');
+  $('.search').removeClass('active');
+  })
+  })
+
+script(type="text/javascript").
+  function search(){
+  var val = $(".src").val().length;
+  if(val > 0){
+  $('.search').addClass('active');
+  }else{
+  $('.search').removeClass('active');
+  }
+  }
+
+script(type="text/javascript").
+    $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+    $('nav').toggleClass('active');
+    })
+    
+    })
+
+  
+script(type="text/javascript").
+  $(document).ready(function(){
+  $('ul li').click(function(){
+  $(this).siblings().removeClass('active');
+  $(this).toggleClass('active');
+  })
+  })
+
+//script(type="text/javascript").
+  if(window.location.pathname === "/post-service"){
+    var script = document.createElement('script');
+    script.src = '/js/subcategorias.js';
+    document.write(script.outerHTML);
+  }

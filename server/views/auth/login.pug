@@ -1,0 +1,115 @@
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="/css/log1.css")
+    link(rel="stylesheet" href="/css font/all.css")
+    link(rel="stylesheet" href="/css font/all.min.css")
+    link(rel="stylesheet" href="/css font/fontawesome.css")
+    link(rel="stylesheet" href="/css font/fontawesome.min.css")
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+    title Login
+    meta(name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com")
+  body
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '210997140082888',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+      });
+      FB.AppEvents.logPageView();
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    script(type="text/javascript").
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
+      {
+      status: 'connected',
+      authResponse: {
+      accessToken: '...',
+      expiresIn:'...',
+      signedRequest:'...',
+      userID:'...'
+      }
+      }
+    #fb-root
+    script(async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v6.0")
+    script.
+      function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      }
+      function onFailure(error) {
+      console.log(error);
+      }
+      function renderButton() {
+      gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': onSuccess,
+      'onfailure': onFailure
+      });
+      }
+    script(src="https://apis.google.com/js/platform.js?onload=renderButton" async="" defer="")
+    header.site-header
+      .contenedor1.clearfix
+        .logo
+          img(src="img/Logo/Logo.png" alt="Sanson el examinador aun no tenemos un logo qwq")
+        nav.navegacion-perfil.clearfix
+          a(href="registro.php") Registrarse
+    .error
+      span Datos de Ingreso no válidos, inténtelo de nuevo
+    .contenedor.dos-columnas
+      .logo-entrada
+        h2 Aumenta tus ingresos, Ahorra, Busca y Encuentra.
+        p
+          | Ingresa a 
+          span.a Bu
+          span.b Zzy
+          |  es muy facil y sencillo - 
+          span.c Comienza ahora mismo!
+      .main
+        form(action="/login" method="POST")
+          .fb-login-button(data-width="377" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true")
+          .g-signin2(data-width="377" data-height="45" data-button-type="continue_with")
+          .divider.line.one-line.contenteditable
+            span O
+          h2 Inicia sesión con Buzzy
+          .input-contenedor
+            input(type="text" name="username" pattern="[A-Za-z0-9_-]{1,15}" required="")
+            label Username
+            span
+          .input-contenedor
+            input#passlg(type="password" name="password" pattern="[A-Za-z0-9_-]{1,15}" required="")
+            label Contraseña
+            span
+            #toggle(onclick="showHide();")
+          button.botonlg Ingresar
+          p Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.
+    script(type="text/javascript").
+      const password = document.getElementById('passlg');
+      const toggle = document.getElementById('toggle');
+      function showHide(){
+      if (password.type === 'password'){
+      password.setAttribute('type', 'text');
+      toggle.classList.add('hide');
+      }
+      else{
+      password.setAttribute('type', 'password');
+      toggle.classList.remove('hide');
+      }
+      }
+    script(src="js/jquery-3.3.1.min.js")
+    script(src="js/main1.js")

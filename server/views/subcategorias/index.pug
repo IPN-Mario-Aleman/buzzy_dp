@@ -1,0 +1,74 @@
+extends ../layouts/index
+block contenido
+    .container-post
+      input#TODOS(type="radio" name="categories" value="TODOS" checked="")
+      input#1-100(type="radio" name="categories" value="1-100")
+      input#101-1000(type="radio" name="categories" value="101-1000")
+      input#1001(type="radio" name="categories" value="1001")
+
+
+      .container-category
+        label(for="TODOS") TODOS
+        label(for="1-100") Costo 1-100
+        label(for="101-1000") Costo 101-1000
+        label(for="1001") Costo +1000
+
+      .posts#services
+        each category in publicaciones
+          .post(data-category="1-100")
+            .ctn-img
+              img(src=`/img/pub/${category.img_1}` alt="")
+            p.usernamepub=category.username
+            h2=category.titulo
+            span= category.descripcion.substr(0,55)
+              | ...
+            ul.ctn-tag
+              li $ 
+                =category.costo
+              li.rate 4.5 
+                svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1792 1792" width="15" height="15")
+                  path(fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z")
+  
+            a#btn(href="#")
+              button.LeerMas Leer m&aacute;s
+            a#btn.carrito(href="#" )
+              button.agregarCarrito(data-id=`${category.id}`) Ver m&aacute;s tarde
+
+        each category1 in publicaciones1
+          .post(data-category="101-1000")
+            .ctn-img
+              img(src=`/img/pub/${category1.img_1}` alt="")
+            p.usernamepub=category1.username
+            h2=category1.titulo
+            span= category1.descripcion.substr(0,55)
+              | ...
+            ul.ctn-tag
+              li $ 
+                =category1.costo
+              li.rate 4.6 
+                svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1792 1792" width="15" height="15")
+                  path(fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z")  
+            a#btn(href="#")
+              button.LeerMas Leer m&aacute;s
+            a#btn.carrito(href="#" )
+              button.agregarCarrito(data-id=`${category1.id}`) Ver m&aacute;s tarde
+
+        each category2 in publicaciones2
+          .post(data-category="1001")
+            .ctn-img
+              img(src=`/img/pub/${category2.img_1}` alt="")
+            p.usernamepub=category2.username
+            h2=category2.titulo
+            span= category2.descripcion.substr(0,55)
+              | ...
+            ul.ctn-tag
+              li $ 
+                =category2.costo
+              li.rate 4.8 
+                svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1792 1792" width="15" height="15")
+                  path(fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z")
+            a#btn(href="#")
+              button.LeerMas Leer m&aacute;s
+            a#btn.carrito(href="#" )
+              button.agregarCarrito(data-id=`${category2.id}`) Ver m&aacute;s tarde
+          

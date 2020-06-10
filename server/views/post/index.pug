@@ -1,0 +1,170 @@
+extends ../layouts/publicacion
+block contenido
+  script(src="http://code.jquery.com/jquery-3.1.0.min.js")
+  script(src="/js/subcategorias.js")
+  main
+    .box1
+      .container-form
+        form.add_pub(action="/new_service" method="POST" enctype="multipart/form-data")
+          .wrapper
+            .title
+              span.title_serv Agrega un nuevo servicio
+            .form
+              .titulo_serv
+                label T&iacute;tulo: 
+                .inputfield.titulo
+                  input.input.titulo_input(type="text" name="titulo_serv")
+                  .container-hint
+                    .hint-titulo
+                      .header_hint_pub
+                        h2
+                          i.fas.fa-question-circle
+                          | Titulo
+                      hr
+                      .section_hint_pub
+                        p
+                          | Incluye un titulo que describa mejor tu servicio, que sea entendible y legible para los demas.
+                      hr
+                      .footer_hint_pub
+                        p Ejemplo: 
+                        p
+                          | &quot;Dise&ntilde;o de logo en 3rd para videojuego, streams, negocio.&quot;
+              hr
+              .desc_serv
+                label Descripci&oacute;n: 
+                .inputfield.desc
+                  textarea.textarea(placeholder="Describe tu servicio..." name="desc_serv")
+                  .file-upload
+                    input#myFile.file-upload__input(type="file" name="myFile[]" multiple="")
+                    button.file-upload__button(type="button")
+                      i.fas.fa-paperclip
+                      | Agrega una imagen
+                    span.file-upload__label
+                  .container-hint
+                    .hint-desc
+                      .header_hint_pub
+                        h2
+                          i.fas.fa-question-circle
+                          | Descripci&oacute;n
+                      hr
+                      .section_hint_pub
+                        p Incluya todos los detalles necesarios para completar su solicitud.
+                      hr
+                      .footer_hint_pub
+                        p Por ejemplo:
+                        p
+                          | Si est&aacute; buscando un logotipo, puede especificar el nombre de su empresa, tipo de negocio, color preferido, etc.
+              hr
+              .cat_subcat
+                label Elige una categoria: 
+                .inputfield.c_sc
+                  .custom_select
+                    select#categorias(name="categoria_serv")
+                      option(value="0") Selecciona una Categoria
+                      each cats in categoria 
+                        option(value=`${cats.id}`)=cats.nom_cat
+                  .custom_select.sub_2#sub_cate
+                    select#sub_cat(name="subcategoria_serv") 
+
+                  .container-hint
+                    .hint-cat
+                      .header_hint_pub
+                        h2
+                          i.fas.fa-question-circle
+                          | Refina tu servicio
+                      hr
+                      .section_hint_pub
+                        p Elija la categor&iacute;a y subcategor&iacute;a que mejor se adapte a su solicitud.
+                      hr
+                      .footer_hint_pub
+                        p Por ejemplo:
+                        p
+                          | Si est&aacute; buscando un logotipo, debe elegir &quot;Dise&ntilde;o de logotipo&quot; dentro de la categor&iacute;a &quot;Gr&aacute;ficos y dise&ntilde;o&quot;.
+              hr
+              .precio_serv
+                label Precio: 
+                .inputfield.titulo
+                  input.input.titulo_input(type="number" name="precio")
+                  .container-hint
+                    .hint-titulo
+                      .header_hint_pub
+                        h2
+                          i.fas.fa-question-circle
+                          | Precio
+                      hr
+                      .section_hint_pub
+                        p
+                          | Agregue un valor/precio a su servicio
+                      hr
+                      .footer_hint_pub
+                        p Ejemplo: 
+                        p
+                          | "1000", no es necesario agregar alg&uacute;n signo de peso,  todos los valores son procesados en d&oacute;lares.
+              hr
+              .inputfield.submit_serv
+                input.btn(type="submit" value="Confirmar")
+    .box2
+  script(type="text/javascript").
+    Array.prototype.forEach.call(
+    document.querySelectorAll(".file-upload__button"),
+    function(button) {
+    const hiddenInput = button.parentElement.querySelector(
+    ".file-upload__input"
+    );
+    const label = button.parentElement.querySelector(".file-upload__label");
+    const defaultLabelText = "No file(s) selected";
+    // Set default text for label
+    label.textContent = defaultLabelText;
+    label.title = defaultLabelText;
+    button.addEventListener("click", function() {
+    hiddenInput.click();
+    });
+    hiddenInput.addEventListener("change", function() {
+    const filenameList = Array.prototype.map.call(hiddenInput.files, function(
+    file
+    ) {
+    return file.name;
+    });
+    label.textContent = filenameList.join(", ") || defaultLabelText;
+    label.title = label.textContent;
+    });
+    }
+    );
+  //script(type="text/javascript").
+    $(document).ready(function(){
+    //$('#lista1').val(1);
+    recargarLista();
+    $('#categorias').change(function(e){
+    e.preventDefault();
+    recargarLista();
+    });
+    })
+  //script(type="text/javascript").
+    $(document).ready(function(){
+      $("#categorias").on('change', function(e){
+          e.preventDefault();
+          var data = $('#categorias').val();
+          $.ajax({
+            type: 'post',
+            url: '/ajax',
+            data:"subcat=" + $('#categorias').val(),
+            success:function(data){
+              $('#sub_cat').html(data.cadena);
+            }
+          })
+        });
+    });
+  //script(type="text/javascript").
+    function recargarLista(){
+      $.ajax({
+        type:"POST",
+        url:"/post-service",
+        data:"subcat=" + $('#categorias').val(),
+        success:function(data){
+          $('#sub_cat').html(data.cadena);
+        }
+      });
+    }
+
+
+

@@ -1,0 +1,162 @@
+﻿USE BUZZI;
+
+
+INSERT INTO usuarios(nombre,apellido_paterno,apellido_materno,fecha_nacimiento,edad,sexo) VALUES
+('Ramon','Morales','Alonso','1990-09-01','30','M'),
+('Luis','Rodriguez','Mendoza','1994-05-15','26','M'),
+('Maria','Perez','Vazquez','1994-09-01','26','F'),
+('Jose','Montaño','Cabañas','1987-03-07','33','M'),
+('Jesus','Salinas','lOPEZ','1985-09-19','35','M'),
+('Fernando','Ramirez','Mendoza','1975-03-16','45','M'),
+('Erick','Vazquez','Morales','1999-03-19','21','M'),
+('Mariana','Armenta','Mendoza','1978-06-01','42','F'),
+('Alejandro','Jasso','Perez','1970-07-15','50','M'),
+('Roberta','Diaz','Mendoza','2000-12-26','20','F');
+
+
+INSERT INTO direccion(id_usuario,calle,colonia,delegacion,cp) VALUES
+(1,'Agustin Lara','Ex Normal Tuxtepec','Benito Juarez','09455'),
+(2,'Canoa','Lomas de Chapultepec','Miguel Hidalgo','09433'),
+(3,'Javier Lozano','Pedregal','Miguel Hidalgo','36432'),
+(4,'San Benito','Santa Ursula','Coyoacan','2532'),
+(5,'La piedad','Centro II','Venustiano Carranza','46346'),
+(6,'Maceteros','Primavera','Tlalpan','2345'),
+(7,'Plantios','Noria','Xochimilco','23523'),
+(8,'Presidentes','Libertad','Azcapotzalco','23765'),
+(9,'Rosales','Tempiluli','Tlahuac','09548'),
+(10,'Cajeros','Nicolas Bravo','Venustiano Carranza','02349');
+
+
+INSERT INTO telefono(id_usuario,numero) VALUES
+(1,'3745990349'),
+(2,'2059483423'),
+(3,'2534645677'),
+(4,'5685644356'),
+(5,'4856957454'),
+(6,'2542637568'),
+(7,'2124326757'),
+(8,'6894653534'),
+(9,'3466756654'),
+(10,'3453445746');
+
+
+INSERT INTO perfil_usuario(id_usuario,username,contraseña,mini_avatar,email,confirmed_email,verified,baneado,fecha_reg,vendedor_verified,code) VALUES
+(1,'Ramon90','Ramon90','default.jpg','Ramon90@hotmail.com',True,True,False,'2020-04-01',False,'wr46523er'),
+(2,'Luis94','Luis94','default.jpg','Luis94@hotmail.com',True,True,True,'2020-04-02',True,'evr456v34er'),
+(3,'Maria94','Maria94','default.jpg','Maria94@hotmail.com',True,True,False,'2020-04-03',False,'ertvertv345ve'),
+(4,'Jose87','Jose87','default.jpg','Jose87@hotmail.com',False,False,False,'2020-04-04',False,'etrw435'),
+(5,'Jesus85','Jesus85','default.jpg','Jesus85@hotmail.com',True,True,False,'2020-04-05',False,'wetr54356'),
+(6,'Fernando75','Fernando75','default.jpg','Fernando75@hotmail.com',True,True,False,'2020-04-06',True,'tyujt67'),
+(7,'Erick99','Erick99','default.jpg','Erick99@hotmail.com',False,False,False,'2020-04-07',False,'gret565'),
+(8,'Mariana78','Mariana78','default.jpg','Mariana78@hotmail.com',True,True,False,'2020-04-08',False,'retery6y6y'),
+(9,'Alejandro70','Alejandro70','default.jpg','Alejandro70@hotmail.com',True,True,False,'2020-04-09',False,'ertt34er'),
+(10,'Roberta00','Roberta00','default.jpg','Roberta00@hotmail.com',True,True,True,'2020-04-10',False,'rtyyh564');
+
+
+INSERT INTO log_in_out(username,log_in,log_out) VALUES
+('Ramon90','2020-04-01','2020-04-01'),
+('Luis94','2020-04-02','2020-04-02'),
+('Maria94','2020-04-03','2020-04-03'),
+('Jose87','2020-04-04','2020-04-04'),
+('Jesus85','2020-04-05','2020-04-05'),
+('Fernando75','2020-04-06','2020-04-06'),
+('Erick99','2020-04-07','2020-04-07'),
+('Mariana78','2020-04-08','2020-04-08'),
+('Alejandro70','2020-04-09','2020-04-09'),
+('Roberta00','2020-04-10','2020-04-10');
+
+
+
+INSERT INTO estudios(username,descripcion,tiempo,origen,dominio) VALUES
+('Ramon90','Ingeniero Civil','5 años','IPN','2 años'),
+('Luis94','Diseñador Gráfico','4 años','UAM','1 año'),
+('Maria94','Gamer','2 años','Sin estudios','3 años'),
+('Jose87','Lenguas','3 años','UNAM','2 años'),
+('Jesus85','Musico','3 años','UNAM','1 año'),
+('Fernando75','Fotografo','2 años','Escuela de Fotografia','2 años'),
+('Erick99','Psicologo','3 años','UNAM','2 años'),
+('Mariana78','Desarrollador','4 años','IPN','2 años'),
+('Alejandro70','Administrador de Empresas','4 años','UNITEC','2 años'),
+('Roberta00','Abogado','4 años','UVM','2 años');
+
+
+INSERT INTO categorias(nom_cat,desc_cat,img_cat) VALUES
+('Diseño Gráfico','Consiste en proyectar comunicaciones visuales destinadas a transmitir mensajes específicos a grupos sociales, con objetivos determinados','diseño_grafico.jpg'),
+('Asistente Virtual','Asistente que puede ayudar con cualquier cosa a via remota sin necesidad de especializarse en algo','ast_virtual.jpg'),
+('Coach','Entrenador','coach.jpg'),
+('Gaming','Especialista en videojuegos','gaming.jpg'),
+('Marketing Digital','Aplicación de las estrategias de comercialización llevadas a cabo en los medios digitales','mark_dig.jpg'),
+('Traducción','Dominio de varios lenguajes','traduccion.jpg'),
+('Video y Animación','Edición de videos','vid_anima.jpg'),
+('Música y Audio','Especialistas en sonido','music_aud.jpg'),
+('Otros','Otras categorías','otros.jpg');
+
+
+
+INSERT INTO subcategorias(id_cat,nom_scat,desc_scat,img_scat) VALUES
+(1,'Photoshop','Edicion de fotografia','photosho.jpg'),
+(1,'Diseño de Presentaciones','Diseños en power point o algún otra plataforma','designp.jpg'),
+(1,'Infografia','Representación visual informativa o diagrama de textos escritos','Infografia.jpg'),
+(1,'Trazado de vectores','Diseño de logos o imagenes','trazado.jpg'),
+(1,'Diseño Twitch','Diseño de banner para usuarios de Twitch','designtw.jpg'),
+(1,'Diseño de juegos','Digitalización de imágenes','designjg.jpg'),
+(1,'Youtube Design','Diseño de imágenes y perfiles, animación y digitalización','ytdesign.jpg'),
+(2,'Administracion y Soporte','Archivistas virtuales y manejo de tareas','admysupport.jpg'),
+(2,'Busqueda','Busqueda utilizando Internet de cualquier cosa','busqueda.jpg'),
+(2,'Conversion de Archivos','Relacionada a manejo básico de información','convarch.jpg'),
+(3,'Salud y Bienestar','Relacionada con vida personal','salbin.jpg'),
+(3,'Empresarial','Relacionado a cualquier area empresarial','empresarial.jpg'),
+(4,'Diseño de Juegos','Relacionado al diseño de videojuegos','diseñojg.jpg'),
+(4,'Graficos para Streamers','Relacionado a mejorar calidad de streaming','graficosstreamers.jpg'),
+(4,'Tienda de Twitch','Relacionado a Twitch','tiendatw.jpg'),
+(5,'Redes Sociales','Relacionado a Redes Sociales','redsocial.jpg'),
+(5,'Analisis Web','Relacionado a Web','analisisweb.jpg'),
+(5,'Promocion de Música','Relacionado a Musica','pommusic.jpg'),
+(5,'E-Commerce','Relacionado a E-Commerce','ecommerce.jpg'),
+(5,'Influencer','Relacionado a Influencer','influencer.jpg'),
+(5,'Publicidad','Relacionado a Publicidad','publicidad.jpg'),
+(5,'Relaciones Publicas','Relacionado a Relaciones Publicas','relpublicas.jpg'),
+(6,'Libros y Textos','Relacionado a Letras','librostxt.jpg'),
+(6,'Oratoria Social y Profesional','Relacionado a traduccion en vivo','oratoriasyp.jpg'),
+(7,'Animacion','Relacionado a Animacion','animacion.jpg'),
+(7,'Efectos Visuales','Relacionado a traduccion en vivo','fvx.jpg'),
+(7,'Trailers','Relacionado a Efectos Visuales','trailers.jpg'),
+(7,'GIFs','Relacionado a GIFs','gifs.jpg'),
+(7,'Videos musicales','Relacionado a Videos musicales','videosmusicales.jpg'),
+(7,'Subtitulos','Relacionado a Subtítulos','subtitulos.jpg'),
+(8,'Cantantes y Vocalistas','Relacionado a Cantantes y Vocalistas','canyvocal.jpg'),
+(8,'Sessiones Musicales','Relacionado a Sessiones Musicales','sessionmusic.jpg'),
+(8,'Efectos de Sonido','Relacionado a Efectos de Sonido','efectosonido.jpg'),
+(8,'Mixing y Masterizacion','Relacionado a Mixing y Masterización','mixingymaste.jpg'),
+(8,'Escritores de Canciones','Relacionado a Escritores de Canciones','escritores.jpg'),
+(8,'Productores y Compositores','Relacionado a Productores y Compositores','compositorsypro.jpg'),
+(8,'Transcripcion de Música','Relacionado a Transcripción de Música','transcripmusica.jpg'),
+(8,'DJs','Relacionado a DJs','djs.jpg'),
+(8,'Lecciones de Musica','Relacionado a Lecciones de Musica','leccionesmusica.jpg');
+
+
+INSERT INTO publicacion(id_cat,id_subcat,username,titulo,descripcion,img1,costo) VALUES
+(4,11,'Maria94','I will design twitch, mixer overlays and logo for your stream','Descripcion de la publicacion','<img src=>',700),
+(8,30,'Jesus85','I will edit your audio, mp3, wav, sound effects fx','Descripcion de la publicacion','<img src=>',500);
+
+
+INSERT INTO calificacion(id_publ,rate,comentario) VALUES
+(1,5,'Buen servicio, pero es impuntual en la entrega'),
+(2,8,'Excelente servicio');
+
+
+
+
+SELECT * FROM usuarios;
+SELECT * FROM direccion;
+SELECT * FROM telefono;
+SELECT * FROM perfil_usuario;
+SELECT * FROM log_in_out;
+SELECT * FROM estudios;
+SELECT * FROM categoria;
+SELECT * FROM subcategoria;
+SELECT * FROM publicacion;
+SELECT * FROM calificacion;
+
+
+

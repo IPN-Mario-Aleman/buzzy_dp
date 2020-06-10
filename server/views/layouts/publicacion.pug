@@ -1,0 +1,45 @@
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(charset="utf-8")
+
+    //publicaciones
+    script(type="text/javascript").
+      if(window.location.pathname === "/post-service"){
+      var link = document.createElement('link');
+      link.href = '/css/post-service.css';
+      link.rel = 'stylesheet'
+      document.write(link.outerHTML);
+      } 
+    link(rel="stylesheet" href="/css/styles.css")
+    script(src="/js/modernizr.js" type="text/javascript")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+    link(rel="stylesheet" href="/css font/all.css")
+    link(rel="stylesheet" href="/css font/all.min.css")
+    link(rel="stylesheet" href="/css font/fontawesome.css")
+    link(rel="stylesheet" href="/css font/fontawesome.min.css")
+    link(rel="stylesheet" href="/css font/solid.css")
+    link(rel="stylesheet" href="/css font/solid.min.css")
+    // slider carousel
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    link(href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@300&display=swap" rel="stylesheet")
+
+    link(href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet")
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+
+    title #{pagina} | #{titulo}
+  
+  body
+    if user
+      include includes/headeron
+    else
+      include includes/header
+    block contenido
+    include includes/footer
