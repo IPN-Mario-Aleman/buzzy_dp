@@ -90,18 +90,18 @@ app.use('/', routes());
 
 
 /*Puerto y host para la app */
-/*const host = process.env.HOST || '0.0.0.0';
+const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3000;
-*/
-app.set('port', process.env.PORT || 3000);
+
+/*app.set('port', process.env.PORT || 3000);
 
 server.listen(app.get('port'), ()=>{
     console.log(`server on port ${app.get('port')}`);
-});
-
-/*app.listen(port, host, () => {
-    console.log('El servidor esta funcionando');
 });*/
+
+app.listen(port, host, () => {
+    console.log('El servidor esta funcionando');
+});
 
 
 
