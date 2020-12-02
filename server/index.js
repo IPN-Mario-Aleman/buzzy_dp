@@ -99,9 +99,9 @@ server.listen(app.get('port'), ()=>{
     console.log(`server on port ${app.get('port')}`);
 });
 
-app.listen(port, host, () => {
+/*app.listen(port, host, () => {
     console.log('El servidor esta funcionando');
-});
+});*/
 
 
 
