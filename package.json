@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon servenor",
-    "start": "node server",
+    "start": "node server/index.js",
     "test": "mocha"
   },
   "author": "Mario Alberto Aleman Fernandez",
